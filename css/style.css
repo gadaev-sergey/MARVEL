@@ -1,0 +1,261 @@
+:root {
+  --color-primory: #202020;
+  --color-red-marvel: #ec1d24;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-primory);
+}
+
+.header {
+  padding: 20px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 auto;
+
+  background-color: var(--color-red-marvel);
+}
+
+.main {
+  flex: 1 0 auto;
+  max-width: 1210px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+.main-post {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  max-width: 1210px;
+  margin: 20px auto;
+  padding: 0 15px;
+  font-family: fantasy;
+  font-weight: 400;
+  font-size: 38px;
+  color: #ffffff12;
+  text-transform: uppercase;
+}
+
+.list-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.hero__list {
+  max-width: 1210px;
+  margin: 0 auto;
+  padding: 0 15px 30px 15px;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 380px));
+  gap: 20px;
+}
+
+.hero__item {
+  position: relative;
+  padding: 8px 12px;
+  display: flex;
+  box-shadow: 3px 3px 10px #101010;
+  transition: background .2s ease-in-out;
+}
+
+.hero__item:hover {
+  background-color: #3e2222;
+}
+
+.hero__item:hover .hero__link {
+  color: white;
+}
+
+.hero__link {
+  display: flex;
+  align-items: center;
+  color: #ffffffa1;
+  text-decoration: none;
+  transition: color .2s ease-in-out;
+}
+
+.hero__link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__img {
+  margin-right: 40px;
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.hero__title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.pagination {
+  max-width: 1210px;
+  margin: 0 auto;
+  padding: 30px 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.pagination__link {
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  color: #ffffffa1;
+  text-decoration: none;
+  transition: color .2s ease-in-out, transform .2s ease-in-out;
+}
+
+.check {
+  border-bottom: 1px solid white;
+}
+
+.pagination__link:hover {
+  color: white;
+  transform: scale(1.3);
+}
+
+.copyright {
+  color: white;
+  text-decoration: none;
+  opacity: 0.3;
+  transition: opacity .2s ease-in-out;
+}
+
+.copyright:hover {
+  opacity: 0.8;
+}
+
+.footer {
+  padding: 20px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 auto;
+}
+
+.loading {
+  grid-column: span 3;
+
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading__icon {
+  margin-bottom: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px dashed #ec1d24;
+  animation: eye 1.5s cubic-bezier(0,-0.03,.38,.62) infinite;
+}
+
+.loading__title {
+  font-size: 24px;
+  color: white;
+}
+
+.post {
+  display: flex;
+  gap: 20px;
+  color: white;
+}
+
+.post__title {
+  text-transform: uppercase;
+}
+
+.post__list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 6px;
+  list-style: none;
+}
+
+.post__item {
+  padding: 2px;
+  box-shadow: 3px 3px 10px #101010;
+  transition: background .2s ease-in-out;
+}
+
+.post__item:hover {
+  background-color: #3e2222;
+}
+
+.post__heroFriends {
+  width: 100%;
+  height: 100%;
+  padding: 4px 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffffa1;
+  transition: color .2s ease-in-out;
+}
+
+.post__heroFriends:hover {
+  color: white;
+}
+
+@keyframes eye {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+ }
+
+@media(max-width: 768px) {
+  .hero__list {
+    grid-template-columns: repeat(2, minmax(200px, 380px));
+  }
+
+  .hero__title {
+    font-size: 16px;
+  }
+
+  .post__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 530px) {
+  .hero__list {
+    grid-template-columns: auto;
+  }
+
+  .post__list {
+    grid-template-columns: 1fr;
+  }
+}
